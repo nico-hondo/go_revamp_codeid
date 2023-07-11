@@ -2,7 +2,7 @@
 // versions:
 //   sqlc v1.19.0
 
-package models
+package gen
 
 import (
 	"database/sql"
