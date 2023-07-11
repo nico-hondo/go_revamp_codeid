@@ -4,6 +4,9 @@ import (
 	"database/sql"
 	"log"
 
+	"codeid.revamptwo/controllers"
+	"codeid.revamptwo/repositories"
+	"codeid.revamptwo/services"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -15,17 +18,17 @@ type HttpServer struct {
 }
 
 func InitHttpServer(config *viper.Viper, dbHandler *sql.DB) HttpServer {
-	categoryRepository := repositories.NewCategoryRepository(dbHandler)
-	categoryServices := services.NewCategoryService(categoryRepository)
-	categoryController := controllers.NewCategoryController(categoryServices)
+	departmentRepository := repositories.NewDepartmentRepository(dbHandler)
+	departmentServices := services.NewDepartmentService(departmentRepository)
+	departmentController := controllers.NewDepartmentController(departmentServices)
 
 	router := gin.Default()
 	// router endpoint/url http category
-	router.GET("/employee", departmentController.GetListEmployee)
-	router.GET("/employee/:id", departmentController.GetEmployee)
-	router.POST("/employee", departmentController.CreateEmployee)
-	router.PUT("/employee/:id", departmentController.UpdateEmployee)
-	router.DELETE("/employee/:id", departmentController.DeleteEmployee)
+	router.GET("/department", departmentController.GetListDepartment)
+	router.GET("/department/:id", departmentController.GetDepartment)
+	router.POST("/department", departmentController.CreateDepartment)
+	router.PUT("/department/:id", departmentController.UpdateDepartment)
+	router.DELETE("/department/:id", departmentController.DeleteDepartment)
 
 	// router
 
