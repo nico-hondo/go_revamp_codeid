@@ -71,36 +71,36 @@ func main() {
 
 	// newSales_special_offer, err := queries.CreateSales_special_offer(ctx,
 	// 	repositories.CreateSales_special_offerParams{
-	// 		SpofID:           2,
-	// 		SpofDescription:  "Dapatkan discount 50%, untuk 5 orang",
+	// 		SpofID:           3,
+	// 		SpofDescription:  "Dapatkan discount 25%, untuk 3 orang",
 	// 		SpofDiscount:     50,
 	// 		SpofType:         "",
-	// 		SpofStartDate:    time.Date(2023, time.October, 22, 15, 0, 0, 0, time.Local),
+	// 		SpofStartDate:    time.Date(2023, time.August, 22, 15, 0, 0, 0, time.Local),
 	// 		SpofEndDate:      time.Date(2023, time.September, 22, 15, 0, 0, 0, time.Local),
-	// 		SpofMinQty:       2,
+	// 		SpofMinQty:       4,
 	// 		SpofMaxQty:       3,
-	// 		SpofModifiedDate: time.Date(2023, time.November, 22, 15, 0, 0, 0, time.Local),
-	// 		SpofCateID:       2,
+	// 		SpofModifiedDate: time.Date(2023, time.October, 22, 15, 0, 0, 0, time.Local),
+	// 		SpofCateID:       3,
 	// 	},
 	// )
 
 	// newSpecial_offer_programs, err := queries.CreateSpecial_offer_programs(ctx,
 	// 	repositories.CreateSpecial_offer_programsParams{
-	// 		SocoID:           3,
+	// 		SocoID:           4,
 	// 		SocoSpofID:       2,
-	// 		SocoProgEntityID: 1,
-	// 		SocoStatus:       "open",
-	// 		SocoModifiedDate: time.Date(2023, time.February, 22, 15, 0, 0, 0, time.Local),
+	// 		SocoProgEntityID: 2,
+	// 		SocoStatus:       "closed",
+	// 		SocoModifiedDate: time.Date(2023, time.June, 22, 15, 0, 0, 0, time.Local),
 	// 	},
 	// )
 	//create
 	// if err != nil {
 	// 	log.Fatal("Error : ", err)
 	// }
-	// log.Println(newSales_order_header)
+	// log.Println(newSpecial_offer_programs)
 
 	//delete
-	err := queries.DeleteSales_order_header(ctx, 3)
+	err := queries.DeleteSpecial_offer_programs(ctx, 4)
 	if err != nil {
 		log.Fatal("Error : ", err)
 	}
